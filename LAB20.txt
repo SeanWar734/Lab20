@@ -1,0 +1,22 @@
+ 1| SELECT * FROM customers;
+ 2| SELECT DISTINCT country FROM customers;
+ 3| SELECT * FROM customers WHERE substr(customerID, 1, 2) LIKE 'BL';
+ 4| SELECT * FROM orders LIMIT 100;
+ 5| SELECT * FROM customers WHERE PostalCode = 1010 or 2013 or 12209 or 05023;
+ 6| SELECT * FROM order WHERE ShipRegion IS NOT null;
+ 7| SELECT * FROM customers ORDER BY country, city;
+ 8| INSERT INTO customers (CustomerID, CompanyName) VALUES (12345, 'Company Name')
+ 9| UPDATE orders SET ShipRegion = 'EuroZone' WHERE ShipCountry = 'France'; 
+10| DELETE FROM `order details` WHERE quantity = 1;
+11| SELECT MAX(quantity) FROM `order details`;
+    SELECT MIN(quantity) FROM `order details`;
+    SELECT AVG(quantity) FROM `order details`;
+12| SELECT MAX(quantity) FROM `order details` GROUP BY orderid;
+    SELECT MIN(quantity) FROM `order details` GROUP BY orderid;
+    SELECT AVG(quantity) FROM `order details` GROUP BY orderid; 
+13| SELECT CustomerID FROM orders WHERE OrderID = 10290;
+14| SELECT * FROM orders INNER JOIN customers ON orders.customerID = customers.customerID;
+    SELECT * FROM orders LEFT JOIN customers ON orders.customerID = customers.customerID;
+    SELECT * FROM orders RIGHT JOIN customers ON orders.customerID = customers.customerID;
+15| SELECT FirstName FROM employees WHERE ReportsTo IS null;
+16| SELECT FirstName FROM employees WHERE ReportsTo = 2;
